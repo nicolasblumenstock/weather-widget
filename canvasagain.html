@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas</title>
+</head>
+<body>
+
+<canvas id="canvas" height="500px" width="500px" border></canvas>
+
+<script type="text/javascript">
+	var canvas = document.getElementById('canvas');
+	var context = canvas.getContext('2d');
+
+	// context.strokeStyle = "#ff0000";
+	// context.lineWidth = 10;
+	// context.lineTo(200,100);
+	// context.lineTo(200,200);
+	// context.lineTo(300,200);
+	// context.lineTo(300,150);
+	// context.lineTo(200,150);
+	// context.lineTo(200,100);
+	// context.stroke();
+	// context.closePath();
+
+	// context.arc(350,350,75,0*Math.PI,2*Math.PI);
+	// context.fillStyle = "#0000FF";
+	// context.fill()
+
+	function Ball(x,y,radius,r,g,b){
+		this.x = x;
+		this.y = y;
+		this.radius = radius;
+		this.r = r;
+		this.g = g;
+		this.b = b;
+		this.startArc = 0;
+		this.endArc = Math.PI * 2;
+		this.xDirection = Math.ceil(Math.random() * 10);
+		this.yDirection = Math.ceil(Math.random() * 10);
+	}
+
+	Ball.prototype.updateBall = function(){
+		if (this.x + this.radius >= 500){
+			this.xDirection = -Math.ceil(Math.random() * 10);
+		}else if(this.x - this.radius <= 0){
+			this.xDirection = Math.ceil(Math.random() * 10);
+		}
+		if (this.y + this.radius >= 500){
+			this.yDirection = -Math.ceil(Math.random() * 10);
+		}else if(this.y - this.radius <= 0){
+			this.yDirection = Math.ceil(Math.random() * 10);
+		}
+
+		this.x += this.xDirection;
+		this.y += this.yDirection;	
+	}
+
+	Ball.prototype.draw = function(){
+			context.fillStyle = '#'+this.r+this.g+this.b;
+			// context.fillStyle = rgb(this.r,this.g,this.b);
+			context.beginPath();
+			context.arc(this.x,this.y,this.radius,this.startArc,this.endArc);
+			context.fill();
+			context.closePath();		
+		}
+
+		function run(){
+			context.clearRect(0,0,500,500);
+		for (let i = 0; i < balls.length; i++){
+			balls[i].updateBall();
+			balls[i].draw();
+			}
+			requestAnimationFrame(run);
+		}
+	
+	var balls = [];
+	balls.push(new Ball(150,150,75,30,10,45));
+	balls.push(new Ball(250,250,45,80,30,10));
+
+	run();
+
+</script>
+
+</body>
+</html>

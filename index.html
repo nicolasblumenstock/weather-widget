@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>It's Raining Sideways</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="config.js"></script>
+	<script type="text/javascript" src="scripts.js"></script>
+
+</head>
+<body>
+	<div class="container weatherApp">
+		<div class="row submitBar">
+			<div class="col-sm-4 col-sm-offset-4">
+				<form class="weather-submit">
+					<div class="form-group">
+						<input type="text" id="weather-location" placeholder="Zip Code" class="form-control"/>
+						<button type="submit" id='weather-button' class="btn btn-default">Weather Me</button>						
+					</div>						
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div id="weather-box">
+					<div class="weather-info">
+						<span class="icon"></span><br/>
+						Location: <span class="locale"></span><br/>
+						Currently: <span class="temp-in-f"></span> &deg; F<br/>
+						weather: <span class="weather-type"></span><br/>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 text-center">
+				<canvas id="weather-canvas" height="500px" width="500px"></canvas>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
