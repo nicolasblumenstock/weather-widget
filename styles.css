@@ -1,20 +1,18 @@
-#weather-canvas{
-	border: 5px solid black;
+.weatherTabs{
+	box-shadow: 3px 3px 15px #582b11;
+	border-radius: 10px;
 }
 
 #weather-location{
-	width: 65%;
+	width: 57%;
 }
 
 #weather-button{
-	width: 33%;
+	width: 25%;
 }
 
 #weather-box{
 	height: 510px;
-/*	background-color: #BD8B9C;
-*/	display: inline-block;
-	border: 5px solid black;	
 }
 
 .weatherApp{
@@ -28,4 +26,73 @@
 .form-control{
 	display: inline-block;
 	height: 33px;
+}
+
+.tab-pane {
+	background-color: #c0f5fa;
+	/*border: 1px solid #ddd;*/
+	border-top: transparent;
+	height: 510px;
+	border-radius: 0px 0px 10px 10px
+}
+
+.nav-tabs>li{
+	width: 20%;
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+.nav-tabs {
+	border-bottom: none;
+	/*margin-right: -1px;*/
+	border-radius: 5px 5px 0px 0px;
+
+}
+
+.nav {
+	background-color: #87f1ff;
+	margin-right: 0px;
+}
+
+/*.nav-tabs > li:last-child > a {
+	margin-right: -1px;
+}*/
+
+.nav-tabs > li > a{
+	color: #555;
+	text-shadow: 0px 0px 1px white;
+}
+
+.nav-tabs > li.active > a, .nav-tabs>li.active>a:focus {
+	background-color: #c0f5fa;
+	color: #555;
+	text-shadow: 0px 0px 1px white;
+	font-weight: bold;
+
+}
+
+.nav-tabs>li>a:hover {
+	background-color: #6fc6d1;
+	border: none;
+	margin-bottom: -1px;
+	color: white;
+	text-shadow: 0px 0px 1px black;
+
+}
+
+.location {
+	height: 75px;
+	font-size: 45px;
+}
+
+.weather {
+	height: 310px;
+}
+
+.information {
+	height: 125px;
+}
+
+tr {
+	height: 25px;
 }

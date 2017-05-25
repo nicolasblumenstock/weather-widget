@@ -14,7 +14,7 @@
 <body>
 	<div class="container weatherApp">
 		<div class="row submitBar">
-			<div class="col-sm-4 col-sm-offset-4">
+			<div class="col-sm-6 col-sm-offset-3">
 				<form class="weather-submit">
 					<div class="form-group">
 						<input type="text" id="weather-location" placeholder="Zip Code" class="form-control"/>
@@ -24,38 +24,70 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-6" id="weather-box">
-				<div>
+			<div class="col-sm-5 col-sm-offset-3" id="weather-box">
+				<div class="weatherTabs">
 	
-					<ul class="nav nav-tabs" role="tablist">
-						<li class="active"><a href="#today" data-toggle="tab" id="day1">Today</a></li>
-						<li><a href="#tomorrow" data-toggle="tab" id="day2">Tomorrow</a></li>
-						<li><a href="#day3" data-toggle="tab" id="day3">Day 3</a></li>
-						<li><a href="#day4" data-toggle="tab" id="day4">Day 4</a></li>
-						<li><a href="#day5" data-toggle="tab" id="day5">Day 5</a></li>
+					<ul class="nav nav-tabs" role="tablist"  id="#myTabs">
+						<li class="active"><a href="#day1" data-toggle="tab" id="tabday1">Day 1</a></li>
+						<li><a href="#day2" data-toggle="tab" id="tabday2">Day 2</a></li>
+						<li><a href="#day3" data-toggle="tab" id="tabday3">Day 3</a></li>
+						<li><a href="#day4" data-toggle="tab" id="tabday4">Day 4</a></li>
+						<li><a href="#day5" data-toggle="tab" id="tabday5">Day 5</a></li>
 					</ul>				
 
 					<div class="tab-content">
-						<div role='tabpanel' class="tab-pane active" id="tabday1">
-							<div class="weather-info">
-								<span class="icon"></span><br/>
-								Location: <span class="locale"></span><br/>
-								Currently: <span class="temp-in-f"></span> &deg; F<br/>
-								weather: <span class="weather-type"></span><br/>
+						<div role='tabpanel' class="tab-pane active" id="day1">
+							<div class="col-sm-12 location"></div>
+							<div class="col-sm-12 weather"></div>
+							<div class="col-sm-12 information">
+								<table class="table table-striped">
+									<tbody>
+										<tr>
+											<td>
+												<div class="col-sm-6">
+													<strong>Low:</strong> <span class="current-min"></span>
+												</div>
+												<div class="col-sm-6">
+													<strong>High:</strong> <span class="current-max"></span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="col-sm-6">
+													<strong>Humidity:</strong> <span class="humidity"></span>%
+												</div>
+												<div class="col-sm-6">
+													<strong>Wind:</strong> <span class="wind"></span>MPH <span class="direction"></span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="col-sm-6">
+													<strong>Sunrise:</strong> <span class="current-sunrise"></span>
+												</div>
+												<div class="col-sm-6">
+													<strong>Sunset:</strong> <span class="current-sunset"></span>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
 						</div>
-						<div role='tabpanel' class="tab-pane" id="tabday2">...</div>
-						<div role='tabpanel' class="tab-pane" id="tabday3">...</div>
-						<div role='tabpanel' class="tab-pane" id="tabday4">...</div>
-						<div role='tabpanel' class="tab-pane" id="tabday5">...</div>
+						<div role='tabpanel' class="tab-pane" id="day2"></div>
+						<div role='tabpanel' class="tab-pane" id="day3"></div>
+						<div role='tabpanel' class="tab-pane" id="day4"></div>
+						<div role='tabpanel' class="tab-pane" id="day5"></div>
 					</div>				
 
 				</div>								
 
 			</div>
-			<div class="col-sm-6 text-center">
+<!-- 			<div class="col-sm-6 text-center">
 				<canvas id="weather-canvas" height="500px" width="500px"></canvas>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </body>
