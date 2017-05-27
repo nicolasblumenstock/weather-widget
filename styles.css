@@ -29,7 +29,7 @@
 }
 
 .tab-pane {
-	background-color: #c0f5fa;
+	background-color: white;
 	/*border: 1px solid #ddd;*/
 	border-top: transparent;
 	height: 510px;
@@ -50,6 +50,7 @@
 }
 
 .nav {
+	/*background: rgba(135,241,255,.85);*/
 	background-color: #87f1ff;
 	margin-right: 0px;
 }
@@ -64,16 +65,15 @@
 }
 
 .nav-tabs > li.active > a, .nav-tabs>li.active>a:focus {
-	background-color: #c0f5fa;
+	background-color: white;
 	color: #555;
 	text-shadow: 0px 0px 1px white;
 	font-weight: bold;
-
 }
 
 .nav-tabs>li>a:hover {
 	background-color: #6fc6d1;
-	border: none;
+	/*border: none;*/
 	margin-bottom: -1px;
 	color: white;
 	text-shadow: 0px 0px 1px black;
@@ -83,6 +83,8 @@
 .location {
 	height: 75px;
 	font-size: 45px;
+	font-weight: bold;
+	text-shadow: 0px 0px 1px white;
 }
 
 .weather {
@@ -95,4 +97,46 @@
 
 tr {
 	height: 25px;
+}
+
+body {
+	color: #555;
+}
+
+.animatedTemps {
+	height: 90%;
+}
+
+.weatherIcon, .currentTemp {
+	display: inline-block;
+}
+
+.weatherIcon {
+	float: left;
+}
+
+.currentTemp {
+	float: right;
+	font-size: 100px;
+}
+
+.weather-description {
+	text-align: center;
+	font-size: 20px;
+	text-shadow: 0px 0px 1px white;
+}
+
+.btn-color {
+	background-color: #AF125A;
+	color: white;
+	font-weight: bold;
+	text-shadow: 0px 0px 1px black;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+	background: rgba(189,139,156,.45);
+}
+
+.table-striped>tbody>tr:nth-of-type(even) {
+	background: rgba(192,245,250,.45);
 }

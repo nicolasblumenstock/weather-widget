@@ -18,7 +18,7 @@
 				<form class="weather-submit">
 					<div class="form-group">
 						<input type="text" id="weather-location" placeholder="Zip Code" class="form-control"/>
-						<button type="submit" id='weather-button' class="btn btn-default">Weather Me</button>						
+						<button type="submit" id='weather-button' class="btn btn-default btn-color">Weather Me</button>						
 					</div>						
 				</form>
 			</div>
@@ -38,7 +38,13 @@
 					<div class="tab-content">
 						<div role='tabpanel' class="tab-pane active" id="day1">
 							<div class="col-sm-12 location"></div>
-							<div class="col-sm-12 weather"></div>
+							<div class="col-sm-12 weather">
+								<div class="col-sm-12 animatedTemps">
+									<div class="weatherIcon"></div>
+									<div class="currentTemp"></div>
+								</div>
+								<div class="col-sm-12 weather-description"></div>
+							</div>
 							<div class="col-sm-12 information">
 								<table class="table table-striped">
 									<tbody>

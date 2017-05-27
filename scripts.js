@@ -37,7 +37,7 @@ $(document).ready(function(){
 		var multidayUrl = `${forecastUrl}${location},us&units=imperial&cnt=5&appid=${apiKey}`
 		$.getJSON(url,(data)=>{
 			var currTemps = {
-				curr: data.main.temp,
+				curr: Math.round(data.main.temp),
 				high: data.main.temp_max,
 				low: data.main.temp_min,
 			}
@@ -59,13 +59,15 @@ $(document).ready(function(){
 			// animateCircle(0,currTemps.curr);
 
 			$('#tabday1').html(dates[currDate.getDay()])
-			$('.weather').html(`<img src="http://openweathermap.org/img/w/${currIcon}" /><br/>${currWeather}`);
+			$('.weatherIcon').html(`<img src="http://openweathermap.org/img/w/${currIcon}" />`);
+			$('.currentTemp').html(currTemps.curr + '&#8457;')
+			$('.weather-description').html(currWeather)
 			$('.location').html(locationName);
 			$('.humidity').html(currHumidity);
 			$('.wind').html(currWindSpeed);
 			$('.direction').html(currWindDirection);
-			$('.current-min').html(currTemps.low);
-			$('.current-max').html(currTemps.high);
+			$('.current-min').html(currTemps.low + '&#8457;');
+			$('.current-max').html(currTemps.high + '&#8457;');
 			$('.current-sunrise').html(currentRiseTime);
 			$('.current-sunset').html(currentSetTime);			
 
@@ -79,7 +81,6 @@ $(document).ready(function(){
 				var dailyMax = otherData.list[i].temp.max;
 				var dailyWeather = otherData.list[i].weather[0].main;
 				var dailyIcon = otherData.list[i].weather[0].icon + '.png';
-				// var dailyIconImage = `<img src='${dailyIcon} />'`;
 				var dailyDate = new Date((otherData.list[i].dt) * 1000);
 
 				$('#day'+(i+1)).html(`min: ${dailyMin}<br>max: ${dailyMax}<br>weather: ${dailyWeather}<br><img src='http://openweathermap.org/img/w/${dailyIcon}' />`)
